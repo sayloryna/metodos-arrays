@@ -65,10 +65,11 @@ for (let grade = 0; grade < grades.length; grade++) {
     passGrades.push(grades[grade]);
   }
 }
-console.log(`Los aprobados han sacado ${passGrades.toFixed(1)}`);
-console.log(`La nota media es: ${averageGrades} `);
+console.log(`Los aprobados han sacado ${passGrades}`);
+console.log(`La nota media es: ${averageGrades.toFixed(1)} `);
 console.log(
   `La nota más alta ha sido: ${sortedGrades.at(-1)} y la más baja: ${
     sortedGrades[0]
   }`
 );
+
