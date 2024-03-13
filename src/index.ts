@@ -50,15 +50,22 @@ console.log(words.reverse().join(" "));
 let grades: number[] = [];
 grades = [5, 8, 9, 6, 7];
 
-const sortedGrades = grades.sort((a, b) => a - b);
+const sortedGrades = grades.sort((gradeA, gradeB) => gradeA - gradeB);
 
 let totalGrades = 0;
 for (let grade = 0; grade < grades.length; grade++) {
   totalGrades += grades[grade];
 }
+
 const averageGrades = totalGrades / grades.length;
 
-console.log(`Los aprobados han sacado ${sortedGrades}`);
+const passGrades: number[] = [];
+for (let grade = 0; grade < grades.length; grade++) {
+  if (grades[grade] >= 5) {
+    passGrades.push(grades[grade]);
+  }
+}
+console.log(`Los aprobados han sacado ${passGrades.toFixed(1)}`);
 console.log(`La nota media es: ${averageGrades} `);
 console.log(
   `La nota más alta ha sido: ${sortedGrades.at(-1)} y la más baja: ${
