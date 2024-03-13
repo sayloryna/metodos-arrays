@@ -1,7 +1,7 @@
 //1.Años//
-const years = [];
-for (let i = 2000; i <= 2024; i++) {
-  years.push(i);
+const years: number[] = [];
+for (let year = 2000; year <= 2024; year++) {
+  years.push(year);
 }
 //2.Words//
 const words = [
@@ -53,8 +53,8 @@ grades = [5, 8, 9, 6, 7];
 const sortedGrades = grades.sort((a, b) => a - b);
 
 let totalGrades = 0;
-for (let i = 0; i < grades.length; i++) {
-  totalGrades += grades[i];
+for (let grade = 0; grade < grades.length; grade++) {
+  totalGrades += grades[grade];
 }
 const averageGrades = totalGrades / grades.length;
 
