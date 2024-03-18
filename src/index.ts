@@ -1,9 +1,9 @@
-//1.Años//
+// 1.Años
 const years: number[] = [];
 for (let year = 2000; year <= 2024; year++) {
   years.push(year);
 }
-//2.Words//
+// 2.Words
 const words = [
   "confín.",
   "otro",
@@ -46,18 +46,18 @@ const words = [
 ];
 console.log(words.reverse().join(" "));
 
-//3.Notas//
+// 3.Notas
 let grades: number[] = [];
-grades = [5, 8, 9, 6, 7];
+grades = [5, 8, 9.8, 6.5, 7];
 
 const sortedGrades = grades.sort((gradeA, gradeB) => gradeA - gradeB);
 
-let totalGrades = 0;
+let gradesSum = 0;
 for (let grade = 0; grade < grades.length; grade++) {
-  totalGrades += grades[grade];
+  gradesSum += grades[grade];
 }
 
-const averageGrades = totalGrades / grades.length;
+const gradesAverage = gradesSum / grades.length;
 
 const passGrades: number[] = [];
 for (let grade = 0; grade < grades.length; grade++) {
@@ -65,10 +65,14 @@ for (let grade = 0; grade < grades.length; grade++) {
     passGrades.push(grades[grade]);
   }
 }
-console.log(`Los aprobados han sacado ${passGrades.toFixed(1)}`);
-console.log(`La nota media es: ${averageGrades} `);
 console.log(
-  `La nota más alta ha sido: ${sortedGrades.at(-1)} y la más baja: ${
-    sortedGrades[0]
-  }`
+  `Los aprobados han sacado ${passGrades
+    .slice(0, passGrades.length - 1)
+    .join(", ")} y ${passGrades.at(-1)}`
+);
+console.log(`La nota media es: ${gradesAverage.toFixed(1)} `);
+console.log(
+  `La nota más alta ha sido: ${grades
+    .sort((gradeA, gradeB) => gradeA - gradeB)
+    .at(-1)} y la más baja: ${sortedGrades[0]}`
 );
